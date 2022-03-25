@@ -17,15 +17,15 @@ function colorChange() {
     presentTime = moment().format("hhA");
     console.log(presentTime);
 
-    if (hoursInday.morning.indexOf(presentTime) !== -1{
+    if (hoursInday.morning.indexOf(presentTime)  {
     night.indexOf(presentTime) !==-1; {
-        $(".hourNotes").css("background-color", "purple")
+        $(".hourNotes").css("background-color",)
         console.log("Boom");
 
     }
-    if (hoursInday.business.indexOf(presentTime) !== -1 {
-        $("#"+presentTime).css("background-color", "green")
+    if (hoursInday.business.indexOf(presentTime)  {
+        $("#"+presentTime).css("background-color",)
     }
     for (var i=o; i<hoursInday.business.indexOf(presentTime)
     
-} }
+}
