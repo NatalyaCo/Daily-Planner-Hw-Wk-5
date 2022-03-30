@@ -1,43 +1,80 @@
-let timeNow = moment().format('dddd, MMMM Do YYYY');
+let timeNow = moment().format('dddd, MMMM Do YYYY,  h:mm:ss a');
 let hourNow = moment().format('h');
 let hourNow24= parseInt(moment().format('HH'));
 let hourNowInt = parseInt(hourNow);
 let Timer;
 
+//function showTime() {
+    //var timeShow = document.querySelector ("#currentDay")
+//}
+//showTime ();
+
+
+// var notesRow = document.getElementById ("#hourNotes")
+
+// var futureTime 
+// var pastTime 
+
+//  console.log (timeNow);
+
+
+// function ColorChange (){
+
+// if (timeNow) {
+//    $("#hourNotes").css("backgoruund-color", "#ff6961");
+// }
+// if (pastTime < timeNow) {
+//     $("#hourNotes").css("background-color", "#d3d3d3");
+//  }
+// if (futureTime < timeNow){
+//     $("#hourNotes").css("background-color", "#77dd77");
+
+// }    
+
+   
+// }
+// ColorChange ();
+
+// var currentD = new Date();
+// var startWorkHoursD = new Date();
+// startWorkHoursD.setHours(9,00,0); // 9.00 am
+// var endWorkHoursD = new Date();
+// endWorkHoursD.setHours(17,00,0); // 5.00 pm
+// var colorField = document.querySelector ("hourNotes");
+
+
+
+// console.log(timeNow)
+
+
+// if(currentD >= startWorkHoursD && currentD < endWorkHoursD ){
+//     $("#hourNotes").css("background-color", "#d3d3d3");
+//     console.log("past");
+// }else{
+//     $("#hourNotes").css("background-color", "#77dd77");
+//     console.log("future");
+// }
+
+
 
 $('#currentDay').append(timeNow);
 
-colorChanguing();
+var formSubmitHandler = function (event) {
+    event.preventDefault();
+}
 
-function colorChanguing() {
+if (window.localStorage) {
 
-  Timer = setInterval(colorChanguing, 1000);
-  
-  if(hourNow24 >= 9 && hourNow24 <= 17) {
+    var txthourNotes = document.getElementById ('hourNotes'); 
+    var txt09AM = document.getElementById ('#09AM');
 
-    for (let i =1; i<=9 ; i++) { 
-     let hourInInt = parseInt($('#time'+i).text());
+    txthourNotes.value = localStorage.getItem ('hourNotes');
+    txt09AM.value = localStorage.getItem ('#09AM');
 
-      if (hourInInt < 9) {
-        hourNow = hourInInt + 12;
-      }
-      
-      if (hourInInt == hourNow24) {
-        $('#text'+i).css('background-color', '#FB8F78');
-        continue;
-      }
-      
-      if (hourInInt < hourNow24) {
-        $('#text'+i).css('background-color', 'lightgray');
-      } 
-      else {
-        $('#text'+i).css('background-color', 'lightgreen');
-      }
-    }
+    txthourNotes.addEventListener('input', function ( ) {
+ localStorage.setItem('hourNotes', txthourNotes.value);
 
-  }
-  else {
-    clearInterval(Timer);
-    $('textarea').css('background-color', 'teal');
-  }
+    }, false);
+
+
 }
