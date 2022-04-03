@@ -41,7 +41,11 @@ textarea {
 }
 
 .hour {
+  text-align: center;
+
   background-color: #ffffff;
+  border: #000000;
+  border-radius: 15px;
   color: #000000;
   border-top: 1px dashed #000000;
 }
@@ -63,8 +67,7 @@ textarea {
 
 .saveBtn {
   border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+ 
   background-color: #06aed5;
   color: white;
   cursor: pointer;

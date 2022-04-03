@@ -8,6 +8,10 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+    ></script>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -19,6 +23,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <!-- <script src="moment.js"></script> -->
+
     <title>Work Day Scheduler</title>
   </head>
 
@@ -26,224 +33,190 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p class="lead" id="currentDay"></p>
+      <h2>Current Time &amp; Date: <br /> <span id="time-display"> 00:00:00 </span></h2>
+      <!-- <p class="lead" id="currentDay"></p> -->
     
     </header>
     <!-- Timeblocks go here -->
-    <div class="container my-5">
-      
-      <div class="row"> 
-        <div class="col-12 col-md-2" id="09AM">
-          <p> 09:00 AM </p>
+    <div class="card">
 
-        </div>
-
-        <div class="col-12 col-md-8"> 
-        <textarea class="hourNotes" id="09" rows="2">
-
-        </textarea>
-      </div>
-
-           <button class="saveBtn" id="btn">
+       <form id="input-form" class="card-body">    
+    
+  
+      <div class="container my-5">  
+            <div class="row"> 
+        <section class="col-12 col-md-2">
+          <div class="hour" id="9am"><p>09:00 am</p>
+          </div>
+        </section>
+        <section class="col-12 col-md-8"> 
+        <textarea class="hourNotes" id="09" rows="2"> </textarea>
+        </section>
+           <button class="saveBtn" data-id ="09" id="btn9">
            <i class="fas fa-save"></i>
          </button>
       </div>
     </div> 
-    
-    
       
-    <div class="container my-5">
-      
+    <div class="container my-5">  
       <div class="row"> 
-        <div class="col-12 col-md-2" id="10AM">
-          <p> 10:00 AM </p>
+  <section class="col-12 col-md-2">
+    <div class="hour" id="10am"><p>10:00 am</p>
+    </div>
+  </section>
 
-        </div>
-
-        <div class="col-12 col-md-8"> 
-        <textarea class="hourNotes" id="10" rows="2">
-
-        </textarea>
-      </div>
-
-           <button class="saveBtn" id="btn">
-           <i class="fas fa-save"></i>
-         </button>
-      </div>
-    </div> 
+  <section class="col-12 col-md-8"> 
+  <textarea class="hourNotes" id="10" rows="2"> </textarea>
+  </section>
     
-    
-    <div class="container my-5">
-      
-      <div class="row"> 
-        <div class="col-12 col-md-2" id="11AM">
-          <p> 11:00 AM </p>
+  <button class="saveBtn" data-id="10" id="btn10">
+     <i class="fas fa-save"></i>
+   </button>
+</div>
+</div> 
 
-        </div>
+<div class="container my-5">  
+  <div class="row"> 
+<section class="col-12 col-md-2">
+<div class="hour" id="11am"><p>11:00 am</p>
+</div>
+</section>
 
-        <div class="col-12 col-md-8"> 
-        <textarea class="hourNotes" id="11" rows="2">
+<section class="col-12 col-md-8"> 
+<textarea class="hourNotes" id="11" rows="2"> </textarea>
+</section>
 
-        </textarea>
-      </div>
+<button class="saveBtn" data-id="11" id="btn11">
+ <i class="fas fa-save"></i>
+</button>
+</div>
+</div> 
 
-           <button class="saveBtn" id="btn">
-           <i class="fas fa-save"></i>
-         </button>
-      </div>
-    </div> 
-    
-    
-    <div class="container my-5">
-      
-      <div class="row"> 
-        <div class="col-12 col-md-2" id="12PM">
-          <p> 12:00 PM </p>
+<div class="container my-5">  
+  <div class="row"> 
+<section class="col-12 col-md-2">
+<div class="hour" id="pm"><p>pm</p>
+</div>
+</section>
 
-        </div>
+<section class="col-12 col-md-8"> 
+<textarea class="hourNotes" id="12" rows="2"> </textarea>
+</section>
 
-        <div class="col-12 col-md-8"> 
-        <textarea class="hourNotes" id="12" rows="2">
+<button class="saveBtn" data-id="12" id="btn12">
+ <i class="fas fa-save"></i>
+</button>
+</div>
+</div> 
 
-        </textarea>
-      </div>
+<div class="container my-5">  
+  <div class="row"> 
+<section class="col-12 col-md-2">
+<div class="hour" id="1pm"><p>01:00 pm</p>
+</div>
+</section>
 
-           <button class="saveBtn" id="btn">
-           <i class="fas fa-save"></i>
-         </button>
-      </div>
-    </div> 
-    
-    
-    <div class="container my-5">
-      
-      <div class="row"> 
-        <div class="col-12 col-md-2" id="01PM">
-          <p> 01:00 PM </p>
+<section class="col-12 col-md-8"> 
+<textarea class="hourNotes" id="13" rows="2"> </textarea>
+</section>
 
-        </div>
+<button class="saveBtn" data-id="13" id="btn13">
+ <i class="fas fa-save"></i>
+</button>
+</div>
+</div> 
 
-        <div class="col-12 col-md-8"> 
-        <textarea class="hourNotes" id="13" rows="2">
+<div class="container my-5">  
+  <div class="row"> 
+<section class="col-12 col-md-2">
+<div class="hour" id="2pm"><p> 02: 00 pm</p>
+</div>
+</section>
 
-        </textarea>
-      </div>
+<section class="col-12 col-md-8"> 
+<textarea class="hourNotes" id="14" rows="2"> </textarea>
+</section>
 
-           <button class="saveBtn" id="btn">
-           <i class="fas fa-save"></i>
-         </button>
-      </div>
-    </div> 
-    
-    
-    <div class="container my-5">
-      
-      <div class="row"> 
-        <div class="col-12 col-md-2" id="02PM">
-          <p> 02:00PM </p>
+<button class="saveBtn" data-id="14" id="btn14">
+ <i class="fas fa-save"></i>
+</button>
+</div>
+</div> 
 
-        </div>
+<div class="container my-5">  
+  <div class="row"> 
+<section class="col-12 col-md-2">
+<div class="hour" id="3pm"><p>03:00 pm</p>
+</div>
+</section>
 
-        <div class="col-12 col-md-8"> 
-        <textarea class="hourNotes" id="14" rows="2">
+<section class="col-12 col-md-8"> 
+<textarea class="hourNotes" id="15" rows="2"> </textarea>
+</section>
 
-        </textarea>
-      </div>
+<button class="saveBtn" data-id="15" id="btn15">
+ <i class="fas fa-save"></i>
+</button>
+</div>
+</div> 
 
-           <button class="saveBtn" id="btn">
-           <i class="fas fa-save"></i>
-         </button>
-      </div>
-    </div> 
-    
-    
-    <div class="container my-5">
-      
-      <div class="row"> 
-        <div class="col-12 col-md-2" id="03PM">
-          <p> 03:00 PM </p>
+<div class="container my-5">  
+  <div class="row"> 
+<section class="col-12 col-md-2">
+<div class="hour" id="4pm"><p> 04:00 pm</p>
+</div>
+</section>
 
-        </div>
+<section class="col-12 col-md-8"> 
+<textarea class="hourNotes" id="16" rows="2"> </textarea>
+</section>
 
-        <div class="col-12 col-md-8"> 
-        <textarea class="hourNotes" id="15" rows="2">
+<button class="saveBtn" data-id="16" id="btn16">
+ <i class="fas fa-save"></i>
+</button>
+</div>
+</div> 
 
-        </textarea>
-      </div>
+<div class="container my-5">  
+  <div class="row"> 
+<section class="col-12 col-md-2">
+<div class="hour" id="5pm"><p>05:00 pm</p>
+</div>
+</section>
 
-           <button class="saveBtn" id="btn">
-           <i class="fas fa-save"></i>
-         </button>
-      </div>
-    </div> 
-    
-    
-    <div class="container my-5">
-      
-      <div class="row"> 
-        <div class="col-12 col-md-2" id="04PM">
-          <p> 04:00 PM </p>
+<section class="col-12 col-md-8"> 
+<textarea class="hourNotes" id="17" rows="2"> </textarea>
+</section>
 
-        </div>
+<button class="saveBtn" data-id="17" id="btn17">
+ <i class="fas fa-save"></i>
+</button>
+</div>
+</div> 
 
-        <div class="col-12 col-md-8"> 
-        <textarea class="hourNotes" id="16" rows="2">
+<div class="container my-5">  
+  <div class="row"> 
+<section class="col-12 col-md-2">
+<div class="hour" id="6pm"><p>06:00 pm</p>
+</div>
+</section>
 
-        </textarea>
-      </div>
+<section class="col-12 col-md-8"> 
+<textarea class="hourNotes" id="18" rows="2"> </textarea>
+</section>
 
-           <button class="saveBtn" id="btn">
-           <i class="fas fa-save"></i>
-         </button>
-      </div>
-    </div> 
-    
-    
-    <div class="container my-5">
-      
-      <div class="row"> 
-        <div class="col-12 col-md-2" id="05PM">
-          <p> 05:0 PM </p>
-
-        </div>
-
-        <div class="col-12 col-md-8"> 
-        <textarea class="hourNotes" id="17" rows="2">
-
-        </textarea>
-      </div>
-
-           <button class="saveBtn" id="btn">
-           <i class="fas fa-save"></i>
-         </button>
-      </div>
-    </div> 
-    
-    
-    <div class="container my-5">
-      
-      <div class="row"> 
-        <div class="col-12 col-md-2" id="06PM">
-          <p> 06:00 PM </p>
-
-        </div>
-
-        <div class="col-12 col-md-8"> 
-        <textarea class="hourNotes" id="18" rows="2">
-
-        </textarea>
-      </div>
-
-           <button class="saveBtn" id="btn">
-           <i class="fas fa-save"></i>
-         </button>
-      </div>
-    </div> 
-    
-    
+<button class="saveBtn" data-id="18" id="btn18">
+ <i class="fas fa-save"></i>
+</button>
+</div>
+</div> 
       
   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+  <script src="./assets/js/script.js"></script>
   </body>
 </html>
