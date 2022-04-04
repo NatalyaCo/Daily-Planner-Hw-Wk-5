@@ -1,8 +1,4 @@
-// function displayTime() {
-//   var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
-//   timeDisplayEl.text(rightNow);
-// }
-//setInterval(displayTime, 1000);
+
 
 var timeNow = moment().format("lll");
 var displayTimem = document.querySelector("#time-display");
@@ -41,24 +37,3 @@ $(".saveBtn").on("click", function () {
   var text = $("#"+ dataId).val()
   localStorage.setItem(dataId, text)
 })
-
-// function handleInputFormSubmit(event) {
-//   event.preventDefault();
-
-// if (window.localStorage) {
-
-//   var txthourNotes = document.getElementById('userNotes');
-//   txthourNotes.value = localStorage.getItem('hourNotes');
-
-//   txthourNotes.addEventListener ('input', function(){
-//     localStorage.setItem('hourNotes', txthourNotes.value);
-//   }, false);
-
-// }
-
-// sessionStorage.setItem("hourNotes");
-// let userNotes = sessionStorage.getItemm ("hourNotes");
-// document.getElementById("09").innerHTML = userNotes;
-
-// var formSubmitHandler = function (event) {
-//   event.preventDefault(); }
